@@ -22,11 +22,11 @@ function makeHeeFn() {
       el.textContent = ('へぇ〜');
       el.classList.add('hee');
       el.style.top = getRandPer() + '%';
-document.body.appendChild(el);
-    el.addEventListener("animationend", function callback(event) {
-      document.body.removeChild(el);
-      el.removeEventListener("animationend", callback);
-    }, false);
+      document.body.appendChild(el);
+      el.addEventListener("animationend", function callback(event) {
+        document.body.removeChild(el);
+        el.removeEventListener("animationend", callback);
+      }, false);
 
     };
 

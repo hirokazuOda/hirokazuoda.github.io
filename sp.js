@@ -2,34 +2,13 @@ var milkcocoa = new MilkCocoa('uniihu5ewpf.mlkcca.com');
 var chatDataStore = milkcocoa.dataStore("reaction");
 
 
-function clickEvent1(){
-  dataSend();
-}
+var buttons = [].concat(_toConsumableArray(document.querySelectorAll('.reaction-btn')));
+Bacon.fromArray(buttons).flatMap(function (e) {
+  return Bacon.fromEventTarget(e, 'click');
+}).map(function (e) {
+  return e.target.value;
+}).onValue(function (value) {
+  return ds.send({ to: 'pc', type: value });
+});
 
-function dataSend(){
-	chatDataStore.send({message: 'hee'});
-}
 
-function clickEvent2(){
-  dataSend();
-}
-
-function dataSend(){
-	chatDataStore.send({message: 'wow'});
-}
-
-function clickEvent3(){
-  dataSend();
-}
-
-function dataSend(){
-	chatDataStore.send({message: 'eh'});
-}
-
-function clickEvent4(){
-  dataSend();
-}
-
-function dataSend(){
-	chatDataStore.send({message: '888'});
-}

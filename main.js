@@ -2,7 +2,17 @@ var milkcocoa = new MilkCocoa('uniihu5ewpf.mlkcca.com');
 var ds = milkcocoa.dataStore("reaction");
 
 
-ds.on('send', function(pushed){
+var stream = Bacon.fromBinder(function (callback) {
+   ds.on('send', callback);
+  (function () {
+   return ds.off('send');
+  });
+  }).filter(function (data) {
+    return data.value.to == 'pc';
+  });
+
+stream.map(function (data) {
+  ds.on('send', function(pushed){
   switch (pushed.value.message) {
       case 'hee':
         return sound1();
@@ -14,21 +24,22 @@ ds.on('send', function(pushed){
       case '888':
         return sound4();
   }
+  .onValue(function (fn) {
+    var el = fn();
+    showAndRemove(el);
 });
 
 
 function makeHeeFn() {
+    return function(){
       var el = document.createElement('div');
       el.classList.add('like');
       el.style.top = getRandPer() + '%';
       el.style.left = getRandPer() + '%';
-      document.body.appendChild(el);
-      el.addEventListener("animationend", function callback(event) {
-        document.body.removeChild(el);
-        el.removeEventListener("animationend", callback);
-      }, false);
-
+      return el;
     };
+      
+}
 
 
 
@@ -92,6 +103,14 @@ function sound4()
   // [ID:sound-file]の音声ファイルを再生[play()]する
   document.getElementById( id ).play() ;
 }
+
+  function showAndRemove(el) {
+    document.body.appendChild(el);
+    el.addEventListener("animationend", function callback(event) {
+      document.body.removeChild(el);
+      el.removeEventListener("animationend", callback);
+    }, false);
+  }
 
 
  

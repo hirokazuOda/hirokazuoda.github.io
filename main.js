@@ -12,7 +12,6 @@ var stream = Bacon.fromBinder(function (callback) {
   });
 
 stream.map(function (data) {
-  ds.on('send', function(pushed){
   switch (pushed.value.message) {
       case 'hee':
         return sound1();

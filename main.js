@@ -19,9 +19,9 @@ ds.on('send', function(pushed){
 
 function makeHeeFn() {
       var el = document.createElement('div');
-      el.textContent = ('へぇ〜');
-      el.classList.add('hee');
+      el.classList.add('like');
       el.style.top = getRandPer() + '%';
+      el.style.left = getRandPer() + '%';
       document.body.appendChild(el);
       el.addEventListener("animationend", function callback(event) {
         document.body.removeChild(el);

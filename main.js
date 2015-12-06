@@ -6,6 +6,7 @@ ds.on('send', function(pushed){
   switch (pushed.value.message) {
       case 'hee':
         return sound1();
+        return makeHeeFn();
       case 'wow':
         return sound2();
       case 'eh':
@@ -13,8 +14,21 @@ ds.on('send', function(pushed){
       case '888':
         return sound4();
   }
+}).onValue(function(fn){
+  var el = fn();
+  showAndRemove(el);
 });
 
+
+function makeHeeFn() {
+    return function () {
+      var el = document.createElement('div');
+      el.textContent = ('へぇ〜');
+      el.classList.add('hee');
+      el.style.top = getRandPer() + '%';
+      return el;
+    };
+  }
 
 
 
@@ -32,11 +46,6 @@ function sound1()
   // [ID:sound-file]の音声ファイルを再生[play()]する
   document.getElementById( id ).play() ;
 
-  var el = document.createElement('div');
-  el.classList.add('www');
-  el.style.top = getRandPer() + '%';
-  el.innerText = 'へぇ〜';
-  document.body.appendChild(el);
 }
 
 function sound2()
@@ -83,5 +92,14 @@ function sound4()
   // [ID:sound-file]の音声ファイルを再生[play()]する
   document.getElementById( id ).play() ;
 }
+
+
+ function showAndRemove(el) {
+    document.body.appendChild(el);
+    el.addEventListener("animationend", function callback(event) {
+      document.body.removeChild(el);
+      el.removeEventListener("animationend", callback);
+    }, false);
+  }
  
 

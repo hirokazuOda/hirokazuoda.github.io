@@ -32,3 +32,52 @@
   -webkit-animation-duration: 1s;
           animation-duration: 1s;
 }
+
+@-webkit-keyframes likeAnim {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  15% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  30% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  60% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    margin-top: 0;
+    opacity: 1;
+  }
+  100% {
+    margin-top: -100px;
+    opacity: 0;
+  }
+}
+@keyframes likeAnim {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  15% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  30% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  60% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    margin-top: 0;
+    opacity: 1;
+  }
+  100% {
+    margin-top: -100px;
+    opacity: 0;
+  }
+}

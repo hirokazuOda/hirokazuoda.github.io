@@ -11,7 +11,7 @@ ds.on('send', function(pushed){
       case 'eh':
         return sound3();
       case '888':
-        return sound4;
+        return sound4();
   }
 });
 

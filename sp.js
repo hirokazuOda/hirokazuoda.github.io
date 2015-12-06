@@ -2,7 +2,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
 
 var milkcocoa = new MilkCocoa('uniihu5ewpf.mlkcca.com');
-var chatDataStore = milkcocoa.dataStore("reaction");
+var ds = milkcocoa.dataStore("reaction");
 
 
 

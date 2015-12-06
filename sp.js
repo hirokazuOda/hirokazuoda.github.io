@@ -5,6 +5,7 @@ var milkcocoa = new MilkCocoa('uniihu5ewpf.mlkcca.com');
 var chatDataStore = milkcocoa.dataStore("reaction");
 
 
+
 var buttons = [].concat(_toConsumableArray(document.querySelectorAll('.reaction-btn')));
 Bacon.fromArray(buttons).flatMap(function (e) {
   return Bacon.fromEventTarget(e, 'click');

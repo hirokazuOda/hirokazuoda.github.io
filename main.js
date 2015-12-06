@@ -1,3 +1,8 @@
+'use strict';
+
+(function () {
+  'use strict';
+
 var milkcocoa = new MilkCocoa('uniihu5ewpf.mlkcca.com');
 var ds = milkcocoa.dataStore("reaction");
 
@@ -37,9 +42,11 @@ function makeLikeFn() {
       el.style.left = getRandPer() + '%';
       return el;
     };
-      
 }
 
+function getRandPer() {
+    return Math.floor(Math.random() * 95);
+  }
 
 
 function sound1()
@@ -111,6 +118,6 @@ function sound4()
     }, false);
   }
 
-
+})();
  
 

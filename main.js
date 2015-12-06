@@ -32,7 +32,7 @@ function sound1()
   // [ID:sound-file]の音声ファイルを再生[play()]する
   document.getElementById( id ).play() ;
 
-  let el = document.createElement('div');
+  var el = document.createElement('div');
   el.classList.add('www');
   el.style.top = getRandPer() + '%';
   el.innerText = 'へぇ〜';
@@ -83,5 +83,13 @@ function sound4()
   // [ID:sound-file]の音声ファイルを再生[play()]する
   document.getElementById( id ).play() ;
 }
+
+
+el.addEventListener("animationend",
+  function callback(event) {
+    document.body.removeChild(el);
+    el.removeEventListener("animationend", callback);
+  },
+false);
  
 

@@ -73,7 +73,7 @@ function makeHeeFn() {
 
     return function(){
       var el = document.createElement('div');
-      el.classList.add('like');
+      el.classList.add('hee');
       el.style.top = getRandPer() + '%';
       el.style.left = getRandPer() + '%';
       return el;
@@ -97,7 +97,7 @@ function makeOKFn() {
 
     return function(){
       var el = document.createElement('div');
-      el.classList.add('like');
+      el.classList.add('ok');
       el.style.top = getRandPer() + '%';
       el.style.left = getRandPer() + '%';
       return el;
@@ -121,7 +121,7 @@ function makeQFn() {
 
     return function(){
       var el = document.createElement('div');
-      el.classList.add('like');
+      el.classList.add('question');
       el.style.top = getRandPer() + '%';
       el.style.left = getRandPer() + '%';
       return el;

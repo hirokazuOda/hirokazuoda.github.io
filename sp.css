@@ -1,3 +1,47 @@
+@import url("https://fonts.googleapis.com/css?family=Passion+One");
+html {
+  font-size: 62.5%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background: #3d3636;
+  color: #f2f2f2;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: 'Passion One', cursive, 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+}
+h1 {
+  margin: 1rem;
+  font-size: 3rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1;
+  font-weight: normal;
+  letter-spacing: 1px;
+}
+.author {
+  font-size: 1.6rem;
+  text-align: right;
+  margin: 0 1rem;
+  line-height: 0.6;
+}
+.remocon {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.remocon > *:not(.showing) {
+  display: none;
+}
+.remocon > .comment-box {
+  display: block;
+}
 .reactions::after {
   clear: both;
   display: block;
@@ -76,4 +120,217 @@
   -webkit-transform: scale(0.93);
       -ms-transform: scale(0.93);
           transform: scale(0.93);
+}
+.vote {
+  width: 100%;
+  padding-top: 100%;
+  position: relative;
+  background: #fb887c;
+  color: #fff;
+}
+.vote ul {
+  position: absolute;
+  left: 3rem;
+  right: 2rem;
+  top: 0;
+  bottom: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+}
+.end {
+  width: 100%;
+  padding-top: 100%;
+  position: relative;
+}
+.end .reaction-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #a9bcdc;
+}
+.end .reaction-box .reaction-btn {
+  box-shadow: 1px 1px #8ba3ca, 2px 2px #8ba3ca, 3px 3px #8ba3ca, 4px 4px #8ba3ca, 5px 5px #8ba3ca, 6px 6px #8ba3ca, 7px 7px #8ba3ca, 8px 8px #8ba3ca, 9px 9px #8ba3ca, 10px 10px #8ba3ca, 11px 11px #8ba3ca, 12px 12px #8ba3ca, 13px 13px #8ba3ca, 14px 14px #8ba3ca, 15px 15px #8ba3ca, 16px 16px #8ba3ca, 17px 17px #8ba3ca, 18px 18px #8ba3ca, 19px 19px #8ba3ca, 20px 20px #8ba3ca, 21px 21px #8ba3ca, 22px 22px #8ba3ca, 23px 23px #8ba3ca, 24px 24px #8ba3ca, 25px 25px #8ba3ca, 26px 26px #8ba3ca, 27px 27px #8ba3ca, 28px 28px #8ba3ca, 29px 29px #8ba3ca, 30px 30px #8ba3ca, 31px 31px #8ba3ca, 32px 32px #8ba3ca, 33px 33px #8ba3ca, 34px 34px #8ba3ca, 35px 35px #8ba3ca, 36px 36px #8ba3ca, 37px 37px #8ba3ca, 38px 38px #8ba3ca, 39px 39px #8ba3ca, 40px 40px #8ba3ca, 41px 41px #8ba3ca, 42px 42px #8ba3ca, 43px 43px #8ba3ca, 44px 44px #8ba3ca, 45px 45px #8ba3ca, 46px 46px #8ba3ca, 47px 47px #8ba3ca, 48px 48px #8ba3ca, 49px 49px #8ba3ca, 50px 50px #8ba3ca, 51px 51px #8ba3ca, 52px 52px #8ba3ca, 53px 53px #8ba3ca, 54px 54px #8ba3ca, 55px 55px #8ba3ca, 56px 56px #8ba3ca, 57px 57px #8ba3ca, 58px 58px #8ba3ca, 59px 59px #8ba3ca, 60px 60px #8ba3ca, 61px 61px #8ba3ca, 62px 62px #8ba3ca, 63px 63px #8ba3ca, 64px 64px #8ba3ca, 65px 65px #8ba3ca, 66px 66px #8ba3ca, 67px 67px #8ba3ca, 68px 68px #8ba3ca, 69px 69px #8ba3ca, 70px 70px #8ba3ca, 71px 71px #8ba3ca, 72px 72px #8ba3ca, 73px 73px #8ba3ca, 74px 74px #8ba3ca, 75px 75px #8ba3ca, 76px 76px #8ba3ca, 77px 77px #8ba3ca, 78px 78px #8ba3ca, 79px 79px #8ba3ca, 80px 80px #8ba3ca, 81px 81px #8ba3ca, 82px 82px #8ba3ca, 83px 83px #8ba3ca, 84px 84px #8ba3ca, 85px 85px #8ba3ca, 86px 86px #8ba3ca, 87px 87px #8ba3ca, 88px 88px #8ba3ca, 89px 89px #8ba3ca, 90px 90px #8ba3ca, 91px 91px #8ba3ca, 92px 92px #8ba3ca, 93px 93px #8ba3ca, 94px 94px #8ba3ca, 95px 95px #8ba3ca, 96px 96px #8ba3ca, 97px 97px #8ba3ca, 98px 98px #8ba3ca, 99px 99px #8ba3ca, 100px 100px #8ba3ca;
+  text-shadow: 1px 1px #a9bcdc, 2px 2px #a9bcdc, 3px 3px #a9bcdc, 4px 4px #a9bcdc, 5px 5px #a9bcdc, 6px 6px #a9bcdc, 7px 7px #a9bcdc, 8px 8px #a9bcdc, 9px 9px #a9bcdc, 10px 10px #a9bcdc, 11px 11px #a9bcdc, 12px 12px #a9bcdc, 13px 13px #a9bcdc, 14px 14px #a9bcdc, 15px 15px #a9bcdc, 16px 16px #a9bcdc, 17px 17px #a9bcdc, 18px 18px #a9bcdc, 19px 19px #a9bcdc, 20px 20px #a9bcdc, 21px 21px #a9bcdc, 22px 22px #a9bcdc, 23px 23px #a9bcdc, 24px 24px #a9bcdc, 25px 25px #a9bcdc, 26px 26px #a9bcdc, 27px 27px #a9bcdc, 28px 28px #a9bcdc, 29px 29px #a9bcdc, 30px 30px #a9bcdc, 31px 31px #a9bcdc, 32px 32px #a9bcdc, 33px 33px #a9bcdc, 34px 34px #a9bcdc, 35px 35px #a9bcdc, 36px 36px #a9bcdc, 37px 37px #a9bcdc, 38px 38px #a9bcdc, 39px 39px #a9bcdc, 40px 40px #a9bcdc, 41px 41px #a9bcdc, 42px 42px #a9bcdc, 43px 43px #a9bcdc, 44px 44px #a9bcdc, 45px 45px #a9bcdc, 46px 46px #a9bcdc, 47px 47px #a9bcdc, 48px 48px #a9bcdc, 49px 49px #a9bcdc, 50px 50px #a9bcdc, 51px 51px #a9bcdc, 52px 52px #a9bcdc, 53px 53px #a9bcdc, 54px 54px #a9bcdc, 55px 55px #a9bcdc, 56px 56px #a9bcdc, 57px 57px #a9bcdc, 58px 58px #a9bcdc, 59px 59px #a9bcdc, 60px 60px #a9bcdc, 61px 61px #a9bcdc, 62px 62px #a9bcdc, 63px 63px #a9bcdc, 64px 64px #a9bcdc, 65px 65px #a9bcdc, 66px 66px #a9bcdc, 67px 67px #a9bcdc, 68px 68px #a9bcdc, 69px 69px #a9bcdc, 70px 70px #a9bcdc, 71px 71px #a9bcdc, 72px 72px #a9bcdc, 73px 73px #a9bcdc, 74px 74px #a9bcdc, 75px 75px #a9bcdc, 76px 76px #a9bcdc, 77px 77px #a9bcdc, 78px 78px #a9bcdc, 79px 79px #a9bcdc, 80px 80px #a9bcdc, 81px 81px #a9bcdc, 82px 82px #a9bcdc, 83px 83px #a9bcdc, 84px 84px #a9bcdc, 85px 85px #a9bcdc, 86px 86px #a9bcdc, 87px 87px #a9bcdc, 88px 88px #a9bcdc, 89px 89px #a9bcdc, 90px 90px #a9bcdc, 91px 91px #a9bcdc, 92px 92px #a9bcdc, 93px 93px #a9bcdc, 94px 94px #a9bcdc, 95px 95px #a9bcdc, 96px 96px #a9bcdc, 97px 97px #a9bcdc, 98px 98px #a9bcdc, 99px 99px #a9bcdc, 100px 100px #a9bcdc, 101px 101px #a9bcdc, 102px 102px #a9bcdc, 103px 103px #a9bcdc, 104px 104px #a9bcdc, 105px 105px #a9bcdc, 106px 106px #a9bcdc, 107px 107px #a9bcdc, 108px 108px #a9bcdc, 109px 109px #a9bcdc, 110px 110px #a9bcdc, 111px 111px #a9bcdc, 112px 112px #a9bcdc, 113px 113px #a9bcdc, 114px 114px #a9bcdc, 115px 115px #a9bcdc, 116px 116px #a9bcdc, 117px 117px #a9bcdc, 118px 118px #a9bcdc, 119px 119px #a9bcdc, 120px 120px #a9bcdc;
+  background: #c4d0e6;
+  font-size: 10rem;
+  letter-spacing: 2px;
+}
+.comment-box {
+  padding: 1.8rem 1.3rem;
+}
+.comment-box .comment {
+  padding: 0 1rem;
+  font-size: 1.2rem;
+  line-height: 3rem;
+  vertical-align: top;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: #f2f2f2;
+  border: none;
+  border-radius: 5px;
+  width: 78%;
+  margin: 0;
+  margin-right: 2%;
+  color: #3d3636;
+  box-shadow: 1px 1px #242020, 2px 2px #242020, 3px 3px #242020, 4px 4px #242020, 5px 5px #242020, 6px 6px #242020, 7px 7px #242020, 8px 8px #242020, 9px 9px #242020, 10px 10px #242020, 11px 11px #242020, 12px 12px #242020, 13px 13px #242020, 14px 14px #242020, 15px 15px #242020, 16px 16px #242020, 17px 17px #242020, 18px 18px #242020, 19px 19px #242020, 20px 20px #242020, 21px 21px #242020, 22px 22px #242020, 23px 23px #242020, 24px 24px #242020, 25px 25px #242020, 26px 26px #242020, 27px 27px #242020, 28px 28px #242020, 29px 29px #242020, 30px 30px #242020, 31px 31px #242020, 32px 32px #242020, 33px 33px #242020, 34px 34px #242020, 35px 35px #242020, 36px 36px #242020, 37px 37px #242020, 38px 38px #242020, 39px 39px #242020, 40px 40px #242020, 41px 41px #242020, 42px 42px #242020, 43px 43px #242020, 44px 44px #242020, 45px 45px #242020, 46px 46px #242020, 47px 47px #242020, 48px 48px #242020, 49px 49px #242020, 50px 50px #242020, 51px 51px #242020, 52px 52px #242020, 53px 53px #242020, 54px 54px #242020, 55px 55px #242020, 56px 56px #242020, 57px 57px #242020, 58px 58px #242020, 59px 59px #242020, 60px 60px #242020;
+  outline: none;
+}
+.comment-box .comment::-webkit-input-placeholder {
+  font-size: 1.8rem;
+  color: #ccc;
+}
+.comment-box .comment::-moz-placeholder {
+  font-size: 1.8rem;
+  color: #ccc;
+}
+.comment-box .comment:-ms-input-placeholder {
+  font-size: 1.8rem;
+  color: #ccc;
+}
+.comment-box .comment::placeholder {
+  font-size: 1.8rem;
+  color: #ccc;
+}
+.comment-box .send {
+  padding: 0;
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  width: 20%;
+  font-size: 1.2rem;
+  line-height: 3rem;
+  vertical-align: top;
+  background: #ed5552;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 2rem;
+  margin: 0;
+  box-shadow: 1px 1px #242020, 2px 2px #242020, 3px 3px #242020, 4px 4px #242020, 5px 5px #242020, 6px 6px #242020, 7px 7px #242020, 8px 8px #242020, 9px 9px #242020, 10px 10px #242020, 11px 11px #242020, 12px 12px #242020, 13px 13px #242020, 14px 14px #242020, 15px 15px #242020, 16px 16px #242020, 17px 17px #242020, 18px 18px #242020, 19px 19px #242020, 20px 20px #242020, 21px 21px #242020, 22px 22px #242020, 23px 23px #242020, 24px 24px #242020, 25px 25px #242020, 26px 26px #242020, 27px 27px #242020, 28px 28px #242020, 29px 29px #242020, 30px 30px #242020, 31px 31px #242020, 32px 32px #242020, 33px 33px #242020, 34px 34px #242020, 35px 35px #242020, 36px 36px #242020, 37px 37px #242020, 38px 38px #242020, 39px 39px #242020, 40px 40px #242020, 41px 41px #242020, 42px 42px #242020, 43px 43px #242020, 44px 44px #242020, 45px 45px #242020, 46px 46px #242020, 47px 47px #242020, 48px 48px #242020, 49px 49px #242020, 50px 50px #242020, 51px 51px #242020, 52px 52px #242020, 53px 53px #242020, 54px 54px #242020, 55px 55px #242020, 56px 56px #242020, 57px 57px #242020, 58px 58px #242020, 59px 59px #242020, 60px 60px #242020;
+}
+.comment-box .send:active {
+  -webkit-transform: scale(0.93);
+      -ms-transform: scale(0.93);
+          transform: scale(0.93);
+}
+.ac-custom {
+  padding: 0 3em;
+  margin: 0 auto;
+}
+.ac-custom ul,
+.ac-custom ol {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+}
+.ac-custom li {
+  padding: 2em 0;
+  position: relative;
+}
+.ac-custom label {
+  display: inline-block;
+  position: relative;
+  font-size: 2em;
+  padding: 0 0 0 80px;
+  vertical-align: top;
+  color: rgba(0,0,0,0.2);
+  cursor: pointer;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+.ac-custom input[type="checkbox"],
+.ac-custom input[type="radio"],
+.ac-custom label::before {
+  width: 50px;
+  height: 50px;
+  top: 50%;
+  left: 0;
+  margin-top: -25px;
+  position: absolute;
+  cursor: pointer;
+}
+.ac-custom input[type="checkbox"],
+.ac-custom input[type="radio"] {
+  opacity: 0;
+  -webkit-appearance: none;
+  display: inline-block;
+  vertical-align: middle;
+  z-index: 100;
+}
+.ac-custom label::before {
+  content: '';
+  border: 4px solid #fff;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+.ac-radio label::before {
+  border-radius: 50%;
+}
+.ac-custom input[type="checkbox"]:checked + label,
+.ac-custom input[type="radio"]:checked + label {
+  color: #fff;
+}
+.ac-custom input[type="checkbox"]:checked + label::before,
+.ac-custom input[type="radio"]:checked + label::before {
+  opacity: 0.8;
+}
+/* General SVG and path styles */
+.ac-custom svg {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 50%;
+  margin-top: -20px;
+  left: 5px;
+  pointer-events: none;
+}
+.ac-custom svg path {
+  stroke: #fff;
+  stroke-width: 13px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+/* Specific input, SVG and path styles */
+/* Circle */
+.ac-circle input[type="checkbox"],
+.ac-circle input[type="radio"],
+.ac-circle label::before {
+  width: 30px;
+  height: 30px;
+  margin-top: -15px;
+  left: 10px;
+  position: absolute;
+}
+.ac-circle label::before {
+  background-color: #fff;
+  border: none;
+}
+.ac-circle svg {
+  width: 70px;
+  height: 70px;
+  margin-top: -35px;
+  left: -10px;
+}
+.ac-circle svg path {
+  stroke-width: 5px;
 }

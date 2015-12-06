@@ -23,8 +23,7 @@ stream.map(function (data) {
         return sound3();
       case '888':
         return sound4();
-  }
-  .onValue(function (fn) {
+  }.onValue(function (fn) {
     var el = fn();
     showAndRemove(el);
 });

@@ -19,14 +19,17 @@ ds.on('send', function(pushed){
 
 
 function makeHeeFn() {
-    return function () {
       var el = document.createElement('div');
       el.textContent = ('へぇ〜');
       el.classList.add('hee');
       el.style.top = getRandPer() + '%';
-      return el;
+document.body.appendChild(el);
+    el.addEventListener("animationend", function callback(event) {
+      document.body.removeChild(el);
+      el.removeEventListener("animationend", callback);
+    }, false);
+      
     };
-  }
 
 
 
@@ -93,11 +96,7 @@ function sound4()
 
 
  function showAndRemove(el) {
-    document.body.appendChild(el);
-    el.addEventListener("animationend", function callback(event) {
-      document.body.removeChild(el);
-      el.removeEventListener("animationend", callback);
-    }, false);
+    
   }
  
 

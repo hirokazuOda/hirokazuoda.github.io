@@ -1,0 +1,15 @@
+.www {
+  position: absolute;
+  left: 100%;
+  top: 0; /* あとでrandom() */
+  animation: marquee 6s linear;
+}
+
+@keyframes marquee {
+  0% {
+    left 100%
+  }
+  100% {
+    left -100%
+  }
+}

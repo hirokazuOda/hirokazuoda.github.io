@@ -4,13 +4,13 @@ var ds = milkcocoa.dataStore("reaction");
 
 ds.on('send', function(pushed){
   switch (pushed.value.message) {
-      case 'like':
+      case 'hee':
         return sound1();
-      case 'kwsk':
+      case 'wow':
         return sound2();
-      case 'cheer':
+      case 'eh':
         return sound3();
-      case 'www':
+      case '888':
         return sound4;
   }
 });

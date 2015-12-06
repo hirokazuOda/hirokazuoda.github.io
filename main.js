@@ -20,11 +20,11 @@ stream.map(function (data) {
   switch (data.value.type) {
       case 'like':
         return makeLikeFn();
-      case 'wow':
+      case 'hee':
         return sound2();
-      case 'eh':
+      case 'OK':
         return sound3();
-      case '888':
+      case 'question':
         return sound4();
       }
   }).onValue(function (fn) {
@@ -46,7 +46,7 @@ function makeLikeFn() {
 
   // [ID:sound-file]の音声ファイルを再生[play()]する
   document.getElementById( id ).play() ;
-  
+
     return function(){
       var el = document.createElement('div');
       el.classList.add('like');
@@ -81,7 +81,7 @@ function sound1()
 function sound2()
 {
   // 対象となるID名
-  var id = 'sound-file1' ;
+  var id = 'sound-file2' ;
 
   // 初回以外だったら音声ファイルを巻き戻す
   if( typeof( document.getElementById( id ).currentTime ) != 'undefined' )
@@ -96,7 +96,7 @@ function sound2()
 function sound3()
 {
   // 対象となるID名
-  var id = 'sound-file1' ;
+  var id = 'sound-file3' ;
 
   // 初回以外だったら音声ファイルを巻き戻す
   if( typeof( document.getElementById( id ).currentTime ) != 'undefined' )
@@ -111,7 +111,7 @@ function sound3()
 function sound4()
 {
   // 対象となるID名
-  var id = 'sound-file1' ;
+  var id = 'sound-file4' ;
 
   // 初回以外だったら音声ファイルを巻き戻す
   if( typeof( document.getElementById( id ).currentTime ) != 'undefined' )

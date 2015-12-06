@@ -34,13 +34,7 @@ stream.map(function (data) {
 
 
 function makeLikeFn() {
-    return function(){
-      var el = document.createElement('div');
-      el.classList.add('like');
-      el.style.top = getRandPer() + '%';
-      el.style.left = getRandPer() + '%';
-      return el;
-    };
+
     // 対象となるID名
   var id = 'sound-file1' ;
 
@@ -52,6 +46,15 @@ function makeLikeFn() {
 
   // [ID:sound-file]の音声ファイルを再生[play()]する
   document.getElementById( id ).play() ;
+  
+    return function(){
+      var el = document.createElement('div');
+      el.classList.add('like');
+      el.style.top = getRandPer() + '%';
+      el.style.left = getRandPer() + '%';
+      return el;
+    };
+
 }
 
 function getRandPer() {

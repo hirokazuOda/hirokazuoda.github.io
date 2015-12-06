@@ -21,11 +21,11 @@ stream.map(function (data) {
       case 'like':
         return makeLikeFn();
       case 'hee':
-        return sound2();
+        return makeHeeFn();
       case 'OK':
-        return sound3();
+        return makeOKFn();
       case 'question':
-        return sound4();
+        return makeQFn();
       }
   }).onValue(function (fn) {
     var el = fn();
@@ -57,30 +57,9 @@ function makeLikeFn() {
 
 }
 
-function getRandPer() {
-    return Math.floor(Math.random() * 95);
-  }
+function makeHeeFn() {
 
-
-function sound1()
-{
-  // 対象となるID名
-  var id = 'sound-file1' ;
-
-  // 初回以外だったら音声ファイルを巻き戻す
-  if( typeof( document.getElementById( id ).currentTime ) != 'undefined' )
-  {
-    document.getElementById( id ).currentTime = 0;
-  }
-
-  // [ID:sound-file]の音声ファイルを再生[play()]する
-  document.getElementById( id ).play() ;
-
-}
-
-function sound2()
-{
-  // 対象となるID名
+    // 対象となるID名
   var id = 'sound-file2' ;
 
   // 初回以外だったら音声ファイルを巻き戻す
@@ -91,11 +70,20 @@ function sound2()
 
   // [ID:sound-file]の音声ファイルを再生[play()]する
   document.getElementById( id ).play() ;
+
+    return function(){
+      var el = document.createElement('div');
+      el.classList.add('like');
+      el.style.top = getRandPer() + '%';
+      el.style.left = getRandPer() + '%';
+      return el;
+    };
+
 }
 
-function sound3()
-{
-  // 対象となるID名
+function makeOKFn() {
+
+    // 対象となるID名
   var id = 'sound-file3' ;
 
   // 初回以外だったら音声ファイルを巻き戻す
@@ -106,11 +94,20 @@ function sound3()
 
   // [ID:sound-file]の音声ファイルを再生[play()]する
   document.getElementById( id ).play() ;
+
+    return function(){
+      var el = document.createElement('div');
+      el.classList.add('like');
+      el.style.top = getRandPer() + '%';
+      el.style.left = getRandPer() + '%';
+      return el;
+    };
+
 }
 
-function sound4()
-{
-  // 対象となるID名
+function makeQFn() {
+
+    // 対象となるID名
   var id = 'sound-file4' ;
 
   // 初回以外だったら音声ファイルを巻き戻す
@@ -121,7 +118,17 @@ function sound4()
 
   // [ID:sound-file]の音声ファイルを再生[play()]する
   document.getElementById( id ).play() ;
+
+    return function(){
+      var el = document.createElement('div');
+      el.classList.add('like');
+      el.style.top = getRandPer() + '%';
+      el.style.left = getRandPer() + '%';
+      return el;
+    };
+
 }
+
 
   function showAndRemove(el) {
     document.body.appendChild(el);
@@ -130,6 +137,11 @@ function sound4()
       el.removeEventListener("animationend", callback);
     }, false);
   }
+
+  function getRandPer() {
+    return Math.floor(Math.random() * 95);
+  }
+
 
 })();
  

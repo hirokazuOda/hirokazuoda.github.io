@@ -33,6 +33,63 @@
           animation-duration: 1s;
 }
 
+.hee {
+  position: absolute;
+  left: 20%;
+  top: 50%;
+  width: 70px;
+  height: 70px;
+  background: url("hee.png") no-repeat left top;
+  background-size: contain;
+  z-index: 10;
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+  margin-top: 0;
+  -webkit-animation-name: likeAnim;
+          animation-name: likeAnim;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+.ok {
+  position: absolute;
+  left: 20%;
+  top: 50%;
+  width: 70px;
+  height: 70px;
+  background: url("OK.png") no-repeat left top;
+  background-size: contain;
+  z-index: 10;
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+  margin-top: 0;
+  -webkit-animation-name: likeAnim;
+          animation-name: likeAnim;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+.question {
+  position: absolute;
+  left: 20%;
+  top: 50%;
+  width: 70px;
+  height: 70px;
+  background: url("question.png") no-repeat left top;
+  background-size: contain;
+  z-index: 10;
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+  margin-top: 0;
+  -webkit-animation-name: likeAnim;
+          animation-name: likeAnim;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
 @-webkit-keyframes likeAnim {
   0% {
     -webkit-transform: scale(1);

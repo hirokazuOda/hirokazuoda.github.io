@@ -7,7 +7,6 @@ ds.on('send', function(pushed){
       case 'hee':
         return sound1();
         return makeHeeFn();
-        return showAndRemove(el);
       case 'wow':
         return sound2();
       case 'eh':
@@ -28,7 +27,7 @@ document.body.appendChild(el);
       document.body.removeChild(el);
       el.removeEventListener("animationend", callback);
     }, false);
-      
+
     };
 
 
@@ -95,8 +94,5 @@ function sound4()
 }
 
 
- function showAndRemove(el) {
-    
-  }
  
 

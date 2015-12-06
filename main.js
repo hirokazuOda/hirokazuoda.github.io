@@ -19,7 +19,6 @@ var stream = Bacon.fromBinder(function (callback) {
 stream.map(function (data) {
   switch (data.value.type) {
       case 'like':
-        return sound1();
         return makeLikeFn();
       case 'wow':
         return sound2();

@@ -7,6 +7,7 @@ ds.on('send', function(pushed){
       case 'hee':
         return sound1();
         return makeHeeFn();
+        return showAndRemove(el);
       case 'wow':
         return sound2();
       case 'eh':
@@ -14,9 +15,6 @@ ds.on('send', function(pushed){
       case '888':
         return sound4();
   }
-}).onValue(function(fn){
-  var el = fn();
-  showAndRemove(el);
 });
 
 

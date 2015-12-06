@@ -12,7 +12,7 @@ var stream = Bacon.fromBinder(function (callback) {
   });
 
 stream.map(function (data) {
-  switch (pushed.value.message) {
+  switch (data.value.type) {
       case 'hee':
         return sound1();
         return makeHeeFn();
@@ -22,7 +22,7 @@ stream.map(function (data) {
         return sound3();
       case '888':
         return sound4();
-  }.onValue(function (fn) {
+  }).onValue(function (fn) {
     var el = fn();
     showAndRemove(el);
 });

@@ -10,7 +10,7 @@
 
 </head>
 <body>
-  <div class="remocon"><div class="reactions showing">
+  <div class="remocon" id="wrapper"><div class="reactions showing">
   	<div class="reaction-box"><button value="like" class="reaction-btn"　onClick="">like</button></div>
   	<div class="reaction-box"><button value="hee" class="reaction-btn" onClick="">hee</button></div>
   	<div class="reaction-box"><button value="OK" class="reaction-btn" onClick="">OK</button></div>
@@ -24,12 +24,18 @@
 </body>
 <script>
 
-$(document).ready(function(){
-  alert("hogehoge");
+$('#wrapper').ready(function(){
+  $('#wrapper').bind('touchstart', function(){
+    FastClick.attach(document.body);
+  });
 });
+
+/*
 if ('addEventListener' in document) {
   document.addEventListener('DOMContentLoaded', function() {
     FastClick.attach(document.body);
   }, false);
-}</script>
+}
+*/
+</script>
 </html>

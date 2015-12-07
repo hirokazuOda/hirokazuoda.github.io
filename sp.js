@@ -9,10 +9,10 @@ var ds = milkcocoa.dataStore("reaction");
 
 
 var buttons = [].concat(_toConsumableArray(document.querySelectorAll('.reaction-btn')));
-Bacon.fromArray(buttons).flatMap(function (e) {
-  return Bacon.fromEventTarget(e, 'click');
-}).map(function (e) {
-  return e.target.value;
+Bacon.fromArray(buttons).flatMap(function (event) {
+  return Bacon.fromEventTarget(event, 'click');
+}).map(function (event) {
+  return event.target.value;
 }).onValue(function (value) {
   return ds.send({ to: 'pc', type: value });
 });

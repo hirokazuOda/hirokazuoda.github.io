@@ -1,33 +1,41 @@
 <?php
 
-require_once("twitteroauth.php");
+require_once 'TwistOAuth/build/TwistOAuth.phar'
 
-$consumerKey = "v88CKkp50ix3PczZhedSdHGz3";
-$consumerSecret = "O1E8ut2cgtIaTJ09SW6soef6Hgr2HTDYDzFqCe04tDKcHcwz2V";
-$accessToken = "206281884-pDgTpQ0wDYvNAvOabqyK3xIAO4dx0FaVx5FY79xw";
-$accessTokenSecret = "bhefawgqyVznl1J6otXuRR6nVQL2C6Gv3IPX9IHW6HRPQ";
+$consumer_key = 'v88CKkp50ix3PczZhedSdHGz3';
+$consumer_secret = 'O1E8ut2cgtIaTJ09SW6soef6Hgr2HTDYDzFqCe04tDKcHcwz2V';
+$access_token = '206281884-pDgTpQ0wDYvNAvOabqyK3xIAO4dx0FaVx5FY79xw';
+$access_token_secret = 'bhefawgqyVznl1J6otXuRR6nVQL2C6Gv3IPX9IHW6HRPQ';
 
-$twObj = new TwitterOAuth($consumerKey,$consumerSecret,$accessToken,$accessTokenSecret);
+$connection = new TwistOAuth($consumer_key, $consumer_secret, $access_token, $access_token_secret);
 
-$andkey = "#教室のこと";
-$options = array('q'=>$andkey,'count'=>'30');
+// ニックネームからユーザ情報を取得
+$users_params = ['screen_name' => 'KYO_SHITSU'];
+$users = $connection->get('users/show', $users_params);
 
-$json = $twObj->OAuthRequest(
-    'https://api.twitter.com/1.1/search/tweets.json',
-    'GET',
-    $options
-);
+// foreach ($tweets as $value) {
+//     $text = htmlspecialchars($value->text, ENT_QUOTES, 'UTF-8', false);
+//     // 検索キーワードをマーキング
+//     $keywords = preg_split('/,|\sOR\s/', $tweets_params['q']); //配列化
+//     foreach ($keywords as $key) {
+//         $text = str_ireplace($key, '<span class="keyword">'.$key.'</span>', $text);
+//     }
+//     // ツイート表示のHTML生成
+//     disp_tweet($value, $text);
+// }
 
-$jset = json_decode($json, true);
+function disp_tweet($value, $text){
+    $icon_url = $value->user->profile_image_url;
+    $screen_name = $value->user->screen_name;
+    $updated = date('Y/m/d H:i', strtotime($value->created_at));
+    $tweet_id = $value->id_str;
+    $url = 'https://twitter.com/' . $screen_name . '/status/' . $tweet_id;
 
-foreach ($jset['statuses'] as $result){
-    $name = $result['user']['name'];
-    $link = $result['user']['profile_image_url'];
-    $content = $result['text'];
-    $updated = $result['created_at'];
-    $time = $time = date("Y-m-d H:i:s",strtotime($updated));
-
-    echo "<img src='".$link."''>"." | ".$name." | ".$content." | ".$time;
-	echo '<br>';
+    echo '<div class="tweetbox">' . PHP_EOL;
+    echo '<div class="thumb">' . '<img alt="" src="' . $icon_url . '">' . '</div>' . PHP_EOL;
+    echo '<div class="meta"><a target="_blank" href="' . $url . '">' . $updated . '</a>' . '<br>@' . $screen_name .'</div>' . PHP_EOL;
+    echo '<div class="tweet">' . $text . '</div>' . PHP_EOL;
+    echo '</div>' . PHP_EOL;
 }
+
 ?>

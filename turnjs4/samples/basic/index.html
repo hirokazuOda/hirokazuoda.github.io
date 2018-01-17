@@ -68,15 +68,18 @@
 function loadApp() {
 
 	// Create the flipbook
+	
+	var w = $(window).width() * 1.05;
+	var h = $(window).height() * 1.05;
 
 	$('.flipbook').turn({
 			// Width
 
-			width:1790/1.5,
+			width:w/0.8,
 
 			// Height
 
-			height:1258/1.5,
+			height:w/0.8*0.7027932961,
 
 			// Elevation
 
